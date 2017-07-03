@@ -1,0 +1,89 @@
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js" ></script> 
+ <script src="http://servicios.apiqroo.com.mx/sepomex/public/js/sepomex_js/sepomex.js" type="text/javascript"></script>
+
+
+<button onclick="findCp('77017');" > buscar el codigo 77017 </button>
+<button onclick="getEstados();" > Estados </button>
+<button onclick="getMunicipios('23');" > Municipios de Quintana Roo </button>
+<button onclick="getAsentamientos('23','4');" > Asentamientos de Othon P. Blanco </button>
+
+<script type="text/javascript">
+  
+function getEstados (cp) {
+
+        Sepomex.getEstados(
+          {
+            
+          },
+          function(response){
+
+            //alert(response[0].CODI_ESTADO);
+
+            console.log(response);
+          }
+        )
+
+}
+
+
+function findCp (id_estado) {
+
+        Sepomex.findCp(
+          {
+            "cp": id_estado,
+            "user": "apiqroo"
+          },
+          function(response){
+             //alert(response[0].CODI_COLONIA);
+
+            console.log(response);
+          }
+        )
+
+}
+
+
+
+function getMunicipios (id_municipio) {
+
+        Sepomex.getMunicipios(
+          {
+            "clave_estado": id_municipio,
+            "user": "apiqroo"
+          },
+          function(response){
+             //alert(response[0].CODI_MUNICIPIO);
+
+            console.log(response);
+          }
+        )
+
+}
+
+
+
+function getAsentamientos (id_estado,id_municipio) {
+
+        Sepomex.getAsentamientos(
+          {
+            "clave_estado": id_estado,
+            "clave_municipio": id_municipio,
+            "user": "apiqroo"
+          },
+          function(response){
+             //alert(response[0].CODI_MUNICIPIO);
+
+            console.log(response);
+          }
+        )
+
+}
+
+</script>
+  
+  
+ 
+  
+ 
